@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="codeg86l_xchatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="codeg86l_xchatModelStoreContainer">
+    <EntitySet Name="Blocked" EntityType="codeg86l_xchatModel.Store.Blocked" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="Categories" EntityType="codeg86l_xchatModel.Store.Categories" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="ChatRooms" EntityType="codeg86l_xchatModel.Store.ChatRooms" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="ChatterAvatars" EntityType="codeg86l_xchatModel.Store.ChatterAvatars" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="Chatters" EntityType="codeg86l_xchatModel.Store.Chatters" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="Countries" EntityType="codeg86l_xchatModel.Store.Countries" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="Friends" EntityType="codeg86l_xchatModel.Store.Friends" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="Hotlist" EntityType="codeg86l_xchatModel.Store.Hotlist" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="Requests" EntityType="codeg86l_xchatModel.Store.Requests" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="Rooms" EntityType="codeg86l_xchatModel.Store.Rooms" store:Type="Tables" Schema="xchatuser" />
+    <EntitySet Name="Subcategories" EntityType="codeg86l_xchatModel.Store.Subcategories" store:Type="Tables" Schema="xchatuser" />
+  </EntityContainer>
+  <EntityType Name="Blocked">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="BlockedUser" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ChatRooms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="RoomID" Type="bigint" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="DeviceID" Type="nvarchar" MaxLength="1050" />
+  </EntityType>
+  <EntityType Name="ChatterAvatars">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="ChatterAvatar" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Chatters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="nvarchar" MaxLength="80" />
+    <Property Name="Password" Type="nvarchar" MaxLength="12" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="80" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="6" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="City" Type="nvarchar" MaxLength="150" />
+    <Property Name="State" Type="nvarchar" MaxLength="150" />
+    <Property Name="Country" Type="nvarchar" MaxLength="150" />
+    <Property Name="isActive" Type="int" />
+    <Property Name="Confirmed" Type="int" />
+    <Property Name="ConfCode" Type="nvarchar" MaxLength="80" />
+    <Property Name="DeviceID" Type="nvarchar" MaxLength="1024" />
+    <Property Name="AccessToken" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Friends">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FriendID" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hotlist">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="Hotlister" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="SenderID" Type="bigint" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="RoomName" Type="nvarchar" MaxLength="150" />
+    <Property Name="RoomStatus" Type="int" />
+    <Property Name="RoomType" Type="int" />
+    <Property Name="StateID" Type="bigint" />
+    <Property Name="SubCatID" Type="bigint" />
+    <Property Name="isActive" Type="int" />
+  </EntityType>
+  <EntityType Name="Subcategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Category" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'codeg86l_xchat.xchatuser.States' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="States">
+        <Property Name="ID" Type="bigint" />
+        <Property Name="Country" Type="bigint" />
+        <Property Name="State" Type="nvarchar" MaxLength="250" />
+      </EntityType>-->
+</Schema>

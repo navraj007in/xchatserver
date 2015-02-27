@@ -1,0 +1,10 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="xChat.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PublicKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ZC9fRqrI5AwH5_2o5zK2jzEODao0FbcLH3NZm7WHJnUlEmETGbmzLMNGlPGIupb2hGnd_G3hVhuzvegjGrR7XyOpLOH14erTgrV6pcoit77UPagoDzkVZd502W7ejihl
+</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
